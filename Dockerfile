@@ -1,6 +1,4 @@
-FROM debian:wheezy
-
-MAINTAINER Ilya Kogan <ikogan@flarecode.com>
+FROM debian:stretch
 
 # Add the OpenMediaVault repository
 COPY openmediavault.list /etc/apt/sources.list.d/
@@ -22,7 +20,7 @@ COPY defaults/rrdcached /etc/default
 COPY omv-startup /usr/sbin/omv-startup
 RUN chmod +x /usr/sbin/omv-startup
 
-EXPOSE 8080 8443
+EXPOSE 80 443
 
 VOLUME /data
 
